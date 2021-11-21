@@ -3,7 +3,7 @@ import ListItemStyle from './ListItem.style';
 import {TouchableHighlight, TextInput, Text, View, FlatList} from 'react-native';
 
 function ListItem() {
-const 
+
   function onPressAsc() {
     
   }
@@ -16,7 +16,7 @@ const
   return (
     <View style={ListItemStyle.container}>
   
-      <TouchableHighlight onPress={onPressAsc} style={ListItemStyle.button} underlayColor='white' >
+      <TouchableHighlight onPress={onPressAsc} style={ListItemStyle.button} underlayColor='gray' >
         <Text style={ListItemStyle.buttonText}>Artan Fiyat</Text>
       </TouchableHighlight>
       <TouchableHighlight onPress={onPressDesc} style={ListItemStyle.button}>
