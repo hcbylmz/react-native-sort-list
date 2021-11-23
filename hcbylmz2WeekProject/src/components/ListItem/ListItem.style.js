@@ -2,16 +2,26 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    padding: 20,
+    display: 'flex',
+    flex: 1,
+    padding: 10,
+    flexDirection: 'column',
     justifyContent: 'space-between',
-    flexDirection: 'row',
-
+  },
+  addItemContainer: {
+  flex:1,
+    backgroundColor:'red',
   },
 
+  buttonContainer: {
+  
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
   button: {
     backgroundColor: '#e0e0e0',
     alignItems: 'center',
-    width:80,
+    width: 80,
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 5,

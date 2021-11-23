@@ -1,16 +1,19 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  container: {flex: 1, justifyContent: 'space-between',
-padding:20,
-},
-  inputContainer: {flex:1,},
-  listContainer: {flex: 2,},
+  container: {
+    flex: 1,
+    justifyContent: 'space-between',
+    padding: 20,
+   
+  },
+  inputContainer: {flex: 2},
+  listContainer: {flex: 3},
 
   item: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-  
+
     marginBottom: 10,
     paddingBottom: 10,
   },
@@ -29,7 +32,5 @@ padding:20,
     fontWeight: 'bold',
     fontSize: 20,
   },
-  showItemPrice: {
-
-  },
+  showItemPrice: {},
 });
