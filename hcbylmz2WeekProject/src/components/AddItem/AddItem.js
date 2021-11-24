@@ -9,6 +9,7 @@ import {
 
 } from 'react-native';
 import ItemSeperator from './ItemSeperator';
+import ButtonComponent from '../ButtonComponent/ButtonComponent';
 
 function AddItem() {
   const [itemName, setItemName] = useState('Test Item');
@@ -34,6 +35,7 @@ function AddItem() {
 
   return (
     <View style={AddItemStyle.container}>
+    
       <View style={AddItemStyle.listContainer}>
             <FlatList data={list} renderItem={renderItem} ItemSeparatorComponent={ItemSeperator} />
       </View>
@@ -50,9 +52,8 @@ function AddItem() {
           placeholder="150"
           onChangeText={setItemPrice}
         />
-        <TouchableOpacity onPress={onPress} style={AddItemStyle.button}>
-          <Text style={AddItemStyle.buttonText}>Add</Text>
-        </TouchableOpacity>
+          <ButtonComponent text={"Add"} style={AddItemStyle.button} textStyle={AddItemStyle.buttonText} onPress={onPress}/>
+       
       </View>
     </View>
   );
