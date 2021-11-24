@@ -11,20 +11,27 @@ import {
 import ItemSeperator from './ItemSeperator';
 import ButtonComponent from '../ButtonComponent/ButtonComponent';
 import ListItemStyle from '../ListItem/ListItem.style'
-function AddItem({onPressAsc}) {
+function AddItem() {
   const [itemName, setItemName] = useState('Test Item');
   const [itemPrice, setItemPrice] = useState('150');
+  const [itemId, setItemId] = useState(0);
   const [list, setList] = useState([
-    {itemName: itemName, itemPrice: itemPrice},
+    {itemName: itemName, itemPrice: itemPrice,itemId:itemId},
   ]);
   function onPress() {
     if (itemName !== '' && itemPrice !== '') {
-      setList([...list, {itemName: itemName, itemPrice: itemPrice}]);
+      newItemId = itemId;
+ 
+      newItemId++;
+     
+      setItemId(newItemId);
+      console.log(list);
+      setList([...list, {itemName: itemName, itemPrice: itemPrice,itemId:newItemId}]);
     } else {
       alert('Please insert required field...');
     }
   }
-  onPressAsc(list);
+ 
   function renderItem({item}) {
     return (
       <View style={AddItemStyle.item}>
@@ -35,12 +42,23 @@ function AddItem({onPressAsc}) {
   }
 
   function onPressAsc() {
-    console.log("deneme");
+  let newList = [...list];
+  newList.sort((a, b) => a.itemPrice - b.itemPrice);
+  setList(newList);
   }
 
-  function onPressDesc() {}
+  function onPressDesc() {
+    let newList = [...list];
+    newList.sort((a, b) => b.itemPrice - a.itemPrice);
+    setList(newList);
+  }
 
-  function onPressDate() {}
+  function onPressDate() {
+    let newList = [...list];
+    newList.sort((a, b) => a.itemId - b.itemId);
+    setList(newList);
+ 
+  }
   return (
     <View style={AddItemStyle.container}>
       <View style={ListItemStyle.container}>
