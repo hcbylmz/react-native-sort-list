@@ -8,6 +8,7 @@ import {
   View,
   FlatList,
 } from 'react-native';
+import ButtonComponent from '../ButtonComponent/ButtonComponent';
 
 function ListItem() {
   function onPressAsc() {}
@@ -19,25 +20,28 @@ function ListItem() {
   return (
     <View style={ListItemStyle.container}>
       <View style={ListItemStyle.buttonContainer}>
-        <TouchableHighlight
-          onPress={onPressAsc}
+        <ButtonComponent
+          text={'Artan Fiyat'}
           style={ListItemStyle.button}
-          underlayColor="gray">
-          <Text style={ListItemStyle.buttonText}>Artan Fiyat</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={onPressDesc} style={ListItemStyle.button}>
-          <Text style={ListItemStyle.buttonText}>Azalan Fiyat</Text>
-        </TouchableHighlight>
-        <TouchableHighlight onPress={onPressDate} style={ListItemStyle.button}>
-          <Text style={ListItemStyle.buttonText}>Tarih</Text>
-        </TouchableHighlight>
+          textStyle={ListItemStyle.buttonText}
+          onPress={onPressAsc}
+        />
+        <ButtonComponent
+          text={'Azalan Fiyat'}
+          style={ListItemStyle.button}
+          textStyle={ListItemStyle.buttonText}
+          onPress={onPressDesc}
+        />
+        <ButtonComponent
+          text={'Tarih'}
+          style={ListItemStyle.button}
+          textStyle={ListItemStyle.buttonText}
+          onPress={onPressDate}
+        />
       </View>
-    
-     <AddItem />
-     
-     
-     
-        </View>
+
+      <AddItem />
+    </View>
   );
 }
 
