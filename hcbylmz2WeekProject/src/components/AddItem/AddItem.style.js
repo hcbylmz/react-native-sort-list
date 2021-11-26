@@ -23,9 +23,10 @@ export default StyleSheet.create({
     marginBottom: 10,
   },
   button: {
-    backgroundColor: 'gray',
+    backgroundColor:'gray',
     alignItems: 'center',
   },
+  
   buttonText: {
     padding: 10,
     color: '#ffffff',

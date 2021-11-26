@@ -8,13 +8,13 @@ function AddItem() {
   const [itemName, setItemName] = useState('Test Item');
   const [itemPrice, setItemPrice] = useState('150');
   const [itemId, setItemId] = useState(0);
-  const [sortState, setSortState] = useState('Date');
+  const [sortState, setSortState] = useState('');
   const [list, setList] = useState([
     {itemName: itemName, itemPrice: itemPrice, itemId: itemId},
   ]);
   function onPress() {
     if (itemName !== '' && itemPrice !== '') {
-      newItemId = itemId;
+      let newItemId = itemId;
       newItemId++;
       setItemId(newItemId);
       let newList = [
@@ -29,6 +29,9 @@ function AddItem() {
         sortItem('itemPrice', false, newList);
       }
       if (sortState == 'Date') {
+        sortItem('itemId', true, newList);
+      }
+      if (sortState == '') {
         sortItem('itemId', true, newList);
       }
     } else {
@@ -63,6 +66,7 @@ function AddItem() {
   function onPressAsc() {
     sortItem('itemPrice', true);
     setSortState('Ascending');
+  
   }
 
   function onPressDesc() {
@@ -81,20 +85,20 @@ function AddItem() {
         <View style={ListItemStyle.buttonContainer}>
           <ButtonComponent
             text={'Artan Fiyat'}
-            style={ListItemStyle.button}
-            textStyle={ListItemStyle.buttonText}
+            style={sortState=='Ascending'?ListItemStyle.buttonActive:ListItemStyle.button}
+            textStyle={sortState=='Ascending'?ListItemStyle.buttonTextActive:ListItemStyle.buttonText}
             onPress={onPressAsc}
           />
           <ButtonComponent
             text={'Azalan Fiyat'}
-            style={ListItemStyle.button}
-            textStyle={ListItemStyle.buttonText}
+            style={sortState=='Descending'?ListItemStyle.buttonActive:ListItemStyle.button}
+            textStyle={sortState=='Descending'?ListItemStyle.buttonTextActive:ListItemStyle.buttonText}
             onPress={onPressDesc}
           />
           <ButtonComponent
             text={'Tarih'}
-            style={ListItemStyle.button}
-            textStyle={ListItemStyle.buttonText}
+            style={sortState=='Date'?ListItemStyle.buttonActive:ListItemStyle.button}
+            textStyle={sortState=='Date'?ListItemStyle.buttonTextActive:ListItemStyle.buttonText}
             onPress={onPressDate}
           />
         </View>

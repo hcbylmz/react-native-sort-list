@@ -25,11 +25,25 @@ export default StyleSheet.create({
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 5,
+  }, buttonActive: {
+    backgroundColor: 'gray',
+    alignItems: 'center',
+    width: 80,
+    borderColor: '#fff',
+    borderWidth: 1,
+    borderRadius: 5,
   },
+
   buttonText: {
     color: '#757575',
     fontWeight: 'bold',
     fontSize: 12,
     padding: 5,
   },
+  buttonTextActive: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 12,
+    padding: 5,
+  }
 });
