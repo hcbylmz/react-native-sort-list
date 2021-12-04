@@ -12,9 +12,7 @@ export default StyleSheet.create({
   flex:1,
     backgroundColor:'red',
   },
-
-  buttonContainer: {
-  
+  buttonContainer: {  
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
@@ -33,7 +31,6 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderRadius: 5,
   },
-
   buttonText: {
     color: '#757575',
     fontWeight: 'bold',
