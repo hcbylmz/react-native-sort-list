@@ -5,15 +5,12 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'space-between',
     padding: 20,
-   
   },
   inputContainer: {flex: 2},
   listContainer: {flex: 3},
-
   item: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-
     marginBottom: 10,
     paddingBottom: 10,
   },
@@ -26,7 +23,6 @@ export default StyleSheet.create({
     backgroundColor:'gray',
     alignItems: 'center',
   },
-  
   buttonText: {
     padding: 10,
     color: '#ffffff',
